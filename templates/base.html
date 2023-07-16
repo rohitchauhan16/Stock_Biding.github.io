@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        
+        <!-- Side navigation -->
+        <div class="sidenav bg-dark">
+          <nav class="navigation">
+            <ul class="mainmenu">
+              <h2 style="margin-top: 5px; margin-bottom: 30px;"><a style="font-size: 22px; color: lightskyblue;" href="/home">Home</a></h2>
+              <li><a style="font-size: 15px;" href="/biding">Biding</a></li>
+              <li><a style="font-size: 15px;" href="/ioc">IOC</a></li> 
+            </ul>
+          </nav>
+        </div>
+
+        {% block head %} {% endblock %}
+        
+    </head>
+
+    <body>
+        
+      <!-- Page content -->
+      <div class="main">
+        <div class="topnav">
+          <nav class="navbar navbar-dark bg-dark">            
+            <a class="navbar-brand" href="/">Stock Profit/Loss</a>   
+          </nav>
+        </div>
+        {% block body %}  {% endblock %}
+      </div>
+
+    </body>
+</html>

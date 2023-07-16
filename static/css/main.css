@@ -1,0 +1,262 @@
+table, td, th {
+  border: 1px solid;   
+  border-collapse: separate; 
+  font-size: 13px; 
+}
+
+table {
+  border-collapse: separate; 
+  width: 100%;
+  text-align: center; 
+  border-spacing: 0;
+}
+
+th {
+  height: 60px;
+}
+
+.dtHorizontalVerticalExampleWrapper {
+max-width: 1000px;
+margin: 0 auto;
+}
+
+#dtHorizontalVerticalExample th, td {
+white-space: nowrap;
+}
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+bottom: .5em;
+}
+
+
+.subsection {
+padding: 20px;
+}
+
+.sectioncust {
+padding: 40px;
+margin: auto;
+background: #FFFFFF;
+}
+
+.cardbody {
+max-height: 93%;
+/* max-width: 450px; */
+max-width: 93%;
+overflow: scroll;
+margin: auto;
+border: 1px solid black;
+padding: 5px;
+}
+
+.col-md-6 {
+padding: 0;
+}
+
+.padding-vottom {
+padding-bottom: 45px;
+}
+
+.cardbody .carcontent {
+height: 600px;
+width: 804px;
+}
+
+
+
+thead th { 
+  text-align: center;
+  background-color: lightsteelblue;  
+  border-bottom: 2px solid;
+}
+
+td {
+  text-align: center; 
+  max-width: 100px;    
+  overflow: hidden;  
+}
+
+
+thead th:first-child { position: sticky; left: 0; background-color: lightsteelblue; border-bottom: 2px solid;}   
+tbody td:first-child { position: sticky; left: 0; background: #FFFFFF; border-right: 2px solid;}  
+
+
+thead {
+top: 0;
+background: #fff;
+position: sticky;
+/* color: #000; */
+border-bottom: 2px solid;
+text-align: left; 
+z-index: 9;
+}
+
+tr:hover {
+background-color: #ffffed;
+}
+
+
+/* The sidebar menu */
+.sidenav {
+height: 100%; /* Full-height: remove this if you want "auto" height */
+width: 180px; /* Set the width of the sidebar */
+position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+z-index: 1; /* Stay on top */
+top: 0; /* Stay at the top */
+left: 0;
+background-color: black; /* Black */
+overflow-x: hidden; /* Disable horizontal scroll */
+padding-top: 20px;
+}
+
+/* The topbar menu */
+/* .topnav {
+width: 100%; 
+position: fixed;
+z-index: 100; 
+text-align: center;
+} */
+
+
+/* The navigation menu links */
+
+.sidenav h2 a {
+padding: 6px 8px 6px 16px;
+text-decoration: none;
+font-size: 22px;
+color: lightskyblue;
+display: block;
+}
+
+.sidenav a, .sidenav ul a {
+padding: 6px 8px 6px 16px;
+text-decoration: none;
+font-size: 13px;
+color: white;
+display: block;
+}
+
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+color: greenyellow;
+}
+
+/* Style page content */
+.main {
+margin-left: 160px; /* Same as the width of the sidebar */
+padding: 0px 10px;
+}
+
+
+
+/*  */
+/*  */
+/*  */
+
+
+
+li h5 {
+padding: 6px 8px 6px 16px;
+text-decoration: none;
+font-size: 16px;
+color: lightskyblue;
+display: block;
+}
+
+/* define a fixed width for the entire menu */
+
+.navigation {
+width: 300px;
+}
+
+
+/* reset our lists to remove bullet points and padding */
+
+.mainmenu,
+.submenu {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+
+/* make ALL links (main and submenu) have padding and background color */
+
+.mainmenu label {
+/* display: block;
+text-decoration: none; */
+/* padding: 8px; */
+font-size: 14px;
+font-weight: normal;
+/* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+color: whitesmoke;
+}
+
+.mainmenu label:hover {
+color: greenyellow;
+}
+
+.mainmenu input {
+display: none;
+}
+
+
+/* add hover behaviour */
+
+/* .mainmenu a:hover {
+background-color: #C5C5C5;
+} */
+
+
+/* when hovering over a .mainmenu item,
+display the submenu inside it.
+we're changing the submenu's max-height from 0 to 200px;
+*/
+
+.mainmenu :checked+.submenu {
+display: block;
+max-height: 300px;
+}
+
+
+/*
+we now overwrite the background-color for .submenu links only.
+CSS reads down the page, so code at the bottom will overwrite the code at the top.
+*/
+
+.submenu a {
+background-color: darkslategray;
+}
+
+
+/* hover behaviour for links inside .submenu */
+
+/* .submenu a:hover {
+background-color: #993;
+} */
+
+
+/* this is the initial state of all submenus.
+we set it to max-height: 0, and hide the overflowed content.
+*/
+
+.submenu {
+overflow: hidden;
+max-height: 0;
+-webkit-transition: all 0.5s ease-out;
+}
+
+
+
+
+

@@ -1,0 +1,162 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+
+    <h1 style="text-align:center; margin-top: 50px;">BIDING Stock Profit/Loss</h1>   
+
+    <div class="sectioncust" style="margin-top:30px;"> 
+      <div class="col-xl-12 col-lg-12">
+          <div class="card shadow mb-4">
+              <div class="card-body" style="max-height: 600px;">
+                  <table class="table table-bordered table-light">
+                    <thead>
+                      <tr>
+                              <th>Month</th>
+                              <th>ID</th>
+                              <th>TYPE</th>
+                              <th>NET SHEET</th>
+                              <th>INTEREST</th>
+                              <th>TURNOVER</th>
+                              <th>TOTAL TURNOVER</th>
+                              <th>TURNOVER COST</th>
+                              <th>ID COST</th>
+                              <th>PERCENTAGE</th> 
+
+                              <th>Action</th> 
+                      </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <form method='POST' enctype="multipart/form-data"> 
+                          <td><input type="month" name="MONTH" id="MONTH" placeholder="MONTH" value="{{MONTH}}" required style="width: 100%;"></td>
+                          <td><input type="text" name="ID" id="ID" placeholder="ID" value="{{ID}}" required style="width: 80%;"></td>
+                          <td><input type="text" name="TYPE" id="TYPE" placeholder="TYPE"  value="{{TYPE}}" required style="width: 80%;"></td>
+                          <td><input type="number" name="NET_SHEET" id="NET_SHEET" placeholder="NET_SHEET"  value="{{NET_SHEET}}" required style="width: 80%;"></td>
+                          <td><input type="number" name="INTEREST" id="INTEREST" placeholder="INTEREST" value="{{INTEREST}}" required style="width: 80%;"></td>
+                          <td><input type="number" name="TURNOVER" id="TURNOVER" placeholder="TURNOVER"  value="{{TURNOVER}}" required style="width: 80%;"></td>
+                          <td><input type="number" step="0.01" name="TOTAL_TURNOVER" id="TOTAL_TURNOVER" placeholder="TOTAL_TURNOVER" value="{{TOTAL_TURNOVER}}" required style="width: 80%;"></td>
+                          <td><input type="number" name="TURNOVER_COST" id="TURNOVER_COST" placeholder="TURNOVER_COST" value="{{TURNOVER_COST}}" required style="width: 80%;"></td>
+                          <td><input type="number" name="ID_COST" id="ID_COST" placeholder="ID_COST" value="{{ID_COST}}" required style="width: 80%;"></td>
+                          <td><input type="number" name="PERCENTAGE" id="PERCENTAGE" placeholder="PERCENTAGE"  value="{{PERCENTAGE}}" required style="width: 80%;"></td>
+                          
+                          <td>  
+                            <input class="btn btn-success btn-sm" type="submit"> 
+                            <a class="btn btn-dark btn-sm" href="/biding">Discard</a></td>  
+                        </form>
+                    </tbody> 
+                  </table> 
+
+
+                  <table class="table table-bordered table-light">
+                    <thead>
+                      <tr>
+                          <th>TURNOVER CHARGES</th>
+                          <th>TURNOVER PROFIT</th>
+                          <th>NET TOTAL</th>
+                          <th>AFTER ID</th>
+                          <th>FINAL OUTPUT</th>
+
+                      </tr>
+                    </thead>
+                    
+                    <tbody>
+                      <td>{{TURNOVER_CHARGES}}</td>
+                      <td>{{TURNOVER_PROFIT}}</td>
+                      <td>{{NET_TOTAL}}</td>
+                      <td>{{AFTER_ID}}</td>
+                      <td>{{FINAL_OUTPUT}}</td> 
+                    </tbody> 
+                  </table>
+
+
+                  <table class="table table-bordered table-light">
+                    <thead>
+                      <tr>
+                        <th style="font-size: 20px;">SUM</th>  
+                      </tr>
+                    </thead>
+                    
+                    <tbody>
+                      <tr>
+                      {% if FINAL_OUTPUT|length %}
+                        {% if FINAL_OUTPUT.startswith("-") %}  
+                        <td style="font-size: 24px; color: red; ">Loss {{FINAL_OUTPUT}}</td>  
+                        {% else %}
+                        <td style="font-size: 24px; color: green; ">Profit {{FINAL_OUTPUT}}</td>   
+                        {% endif %}
+                      {% endif %}  
+                    </tr>
+                    </tbody>  
+                  </table>
+              </div>
+          </div>
+      </div>
+
+
+  </div>
+
+
+
+
+  <div class="sectioncust" style="margin-top:30px;"> 
+    <div class="col-xl-12 col-lg-12"> 
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h4 class="m-0 font-weight-bold text-info">Stock Data</h4>  
+                <a style="display:inline" href="/biding_export" class="btn btn-sm btn-success float-right" role="button">CSV</a>
+            </div>
+            <div class="card-body" style="max-height: 600px;">
+                <div style="overflow: scroll; max-height: 570px;">
+                    {% if d1|length  %} 
+                    <table class="table table-bordered table-light">
+                      <thead>
+                        <tr>
+                          {% for col in d1col %}
+                                <th>{{col}}</th>
+                          {% endfor %}
+                        </tr>
+                      </thead>
+                      
+                      <tbody>
+                        {%for i in d1%} 
+                            <tr>
+                              {%for k in i%}
+                                  <td>{{ k }}</td>
+                              {%endfor%}
+                            </tr>
+                        {%endfor%}
+                      </tbody>
+                    </table>
+
+                    <table class="table table-bordered table-light">
+                      <thead>
+                        <tr>
+                          <th>SUM</th>
+                        </tr>
+                      </thead>
+                      
+                      <tbody>
+                        <tr>
+                          {% if SUM|length %}
+                            {% if SUM.startswith("-") %}  
+                            <td style="font-size: 24px; color: red; ">Loss {{SUM}}</td>  
+                            {% else %}
+                            <td style="font-size: 24px; color: green; ">Profit {{SUM}}</td>   
+                            {% endif %}
+                          {% endif %}  
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    {% endif %}    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+{% endblock %}
+
+
